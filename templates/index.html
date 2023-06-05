@@ -13,6 +13,7 @@
         <form id="carbon-form">
             <label for="activity">Activity:</label>
             <select name="activity" id="activity">
+                <option value="Swimming">Swimming</option>
                 <option value="Driving">Driving</option>
                 <option value="Flying">Flying</option>
                 <option value="Biking">Biking</option>
@@ -32,7 +33,7 @@
                 const formData = $(this).serialize();
                 
                 $.post("/calculate", formData, function(response) {
-                    $("#result").text(`Carbon Footprint: ${response.carbon_footprint.toFixed(2)} kg CO2`);
+                    $("#result").text(`Carbon Footprint: ${response.carbon_footprint} kg CO2`);
                 });
             });
         </script>
